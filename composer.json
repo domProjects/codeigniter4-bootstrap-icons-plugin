@@ -1,0 +1,42 @@
+{
+    "name": "domprojects/codeigniter4-bootstrap-icons-plugin",
+    "description": "Composer plugin that automatically publishes domProjects CodeIgniter 4 Bootstrap Icons assets.",
+    "type": "composer-plugin",
+    "license": "MIT",
+    "keywords": [
+        "composer-plugin",
+        "codeigniter4",
+        "bootstrap-icons",
+        "icons",
+        "assets",
+        "publisher"
+    ],
+    "homepage": "https://github.com/domProjects/codeigniter4-bootstrap-icons-plugin",
+    "support": {
+        "issues": "https://github.com/domProjects/codeigniter4-bootstrap-icons-plugin/issues",
+        "source": "https://github.com/domProjects/codeigniter4-bootstrap-icons-plugin"
+    },
+    "authors": [
+        {
+            "name": "domProjects",
+            "homepage": "https://github.com/domProjects",
+            "role": "Maintainer"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "composer-plugin-api": "^2.0",
+        "domprojects/codeigniter4-bootstrap-icons": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "domProjects\\CodeIgniterBootstrapIconsPlugin\\": "src/"
+        }
+    },
+    "extra": {
+        "class": "domProjects\\CodeIgniterBootstrapIconsPlugin\\Composer\\BootstrapIconsPublishPlugin",
+        "branch-alias": {
+            "dev-main": "1.x-dev"
+        }
+    }
+}
