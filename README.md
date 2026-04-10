@@ -1,4 +1,4 @@
-# domProjects CodeIgniter 4 Bootstrap Icons Plugin
+# Bootstrap Icons Plugin for CodeIgniter 4
 
 Composer plugin that automatically publishes domProjects CodeIgniter 4 Bootstrap Icons assets.
 

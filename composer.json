@@ -28,10 +28,35 @@
         "composer-plugin-api": "^2.0",
         "domprojects/codeigniter4-bootstrap-icons": "^1.0"
     },
+    "require-dev": {
+        "codeigniter4/devkit": "^1.3"
+    },
     "autoload": {
         "psr-4": {
             "domProjects\\CodeIgniterBootstrapIconsPlugin\\": "src/"
         }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "domProjects\\CodeIgniterBootstrapIconsPlugin\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "phpstan/extension-installer": true
+        },
+        "sort-packages": true
+    },
+    "scripts": {
+        "analyze": [
+            "Composer\\Config::disableProcessTimeout",
+            "phpstan analyse -c phpstan.neon.dist --memory-limit=512M",
+            "psalm --config=psalm.xml",
+            "rector process --dry-run --config=rector.php"
+        ],
+        "cs": "php-cs-fixer fix --ansi --verbose --dry-run --diff --config=.php-cs-fixer.dist.php",
+        "cs-fix": "php-cs-fixer fix --ansi --verbose --diff --config=.php-cs-fixer.dist.php",
+        "test": "phpunit -c phpunit.xml.dist"
     },
     "extra": {
         "class": "domProjects\\CodeIgniterBootstrapIconsPlugin\\Composer\\BootstrapIconsPublishPlugin",
