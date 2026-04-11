@@ -9,6 +9,9 @@ on:
       - main
   pull_request:
 
+permissions:
+  contents: read
+
 jobs:
   phpstan:
     runs-on: ubuntu-latest
@@ -26,6 +29,9 @@ jobs:
 
       - name: Install dependencies
         run: composer install --no-interaction --prefer-dist
+
+      - name: Prepare PHPStan temp directory
+        run: mkdir -p build build/phpstan-tmp
 
       - name: Run PHPStan
         run: vendor/bin/phpstan analyse -c phpstan.neon.dist --memory-limit=512M
